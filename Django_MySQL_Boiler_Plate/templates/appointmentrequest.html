@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+	<form action="/action_page.php">
+		<div class="form-group">
+			<label for="Name"> Patient Name:</label>
+			<input type="text" class="form-control" placeholder="Enter a patient's name" id="name">
+		  </div>
+		<div class="form-group">
+			<label for="age">Age :</label>
+			<input type="number" class="form-control" placeholder="Enter a  patient's age" id="age">
+		</div>
+		<div class="form-group">
+			<label for="gender">Gender</label>
+			<div class="custom-control custom-radio custom-control-inline">
+			  <input type="radio" class="custom-control-input" id="Male" name="gender" value="Male">
+			  <label class="custom-control-label" for="Male">Male</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+			  <input type="radio" class="custom-control-input" id="Female" name="gender" value="Female">
+			  <label class="custom-control-label" for="Female">Female</label>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="date">Appointment Date:</label>
+			<input type="date" class="form-control" placeholder="Enter an appointment date" id="date">
+		  </div>
+		 
+		<button type="submit" class="btn btn-primary">Submit Appointment Request</button>
+	  </form>
+
+  {% endblock %}

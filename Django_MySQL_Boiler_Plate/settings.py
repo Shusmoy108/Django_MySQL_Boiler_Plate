@@ -50,7 +50,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Django_MySQL_Boiler_Plate.urls'
-
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+APP_DIR = os.path.dirname(__file__)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -130,3 +131,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(APP_DIR, 'static')

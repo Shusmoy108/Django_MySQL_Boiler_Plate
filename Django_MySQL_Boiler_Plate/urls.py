@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Django_MySQL_Boiler_Plate.views import hello,templateexample
+from Django_MySQL_Boiler_Plate.views import hello,templateexample, appointment,login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
     path('template/', templateexample),
+    path('appointment/', appointment),
+    # path('submit/', logindata),
+    path('login/', login),
+    # path('login/', login),
 ]

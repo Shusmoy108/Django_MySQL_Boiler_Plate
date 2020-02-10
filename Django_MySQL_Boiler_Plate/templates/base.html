@@ -1,22 +1,26 @@
-<!-- <html>
-	<head>
-		<title>{{title}}</title>
-	</head>
-	<body>
-		<h1>{{body}}</h1>
-	</body>
-</html> -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="en">
+{% load static %}
+
+<! DOCTYPE html>
+<html ng-app="hotelcom">
+
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %} {{title}} {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>My helpful timestamp site</h1>
-    {% block content %}{% endblock %}
-    {% block footer %}
-    <hr>
-    <p>Thanks for visiting my site.</p>
+    {% include "menu.html" %}
+<div class="container" style="padding: 0%;">
+
+    {% block body %}
     {% endblock %}
+    <div class="footer">
+        Appointment reservation system
+          <br>
+          All rights reserved.
+      </div>
+</div>
+
+<div class="wait-list">
+</div>
 </body>
-</html>
