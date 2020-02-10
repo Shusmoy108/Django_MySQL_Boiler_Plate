@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import NameForm
 from django.http import HttpResponseRedirect
 def hello(request):
@@ -12,6 +12,31 @@ def appointment(request):
 # def login1(request):
 #     form = NameForm()
 #     return render(request, 'login.html', {'form': form})
+# from .models import Module
+
+
+def ModuleManagement(request):
+    pass
+
+
+def ModuleAdd(request):
+    if request.method == 'POST':
+        r = request.POST
+        username = r.get('username')
+        password = r.get('pswd')
+        # print(mname)
+        # print(morder)
+        if(username == "shusmoy" and password=="1234"):
+            return redirect('appointment')
+        # M = Module(name=mname, order=morder, category="config")
+        # M.save()
+        else:
+            return redirect('ModuleAdd')
+    else:
+        context = {
+
+        }
+        return render(request, 'login.html', context)
 
 def login(request):
    # if this is a POST request we need to process the form data

@@ -12,17 +12,17 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Appointment HUB</h2>
-  <img src="{% static 'image/logo.jpg' %}"
-  <form style="justify-content: center; align-content: center;" method="post">
-    <div class="form-group" style="width: 25%;">
+<div class="container" style="justify-content: center; align-items: center;">
+  <h2 style="text-align: center;">Appointment HUB</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+      <input type="text" class="form-control" name="username" placeholder="Enter username"  required>
     </div>
-    <div class="form-group" style="width: 25%;">
+    <div class="form-group">
       <label for="pswd">Password:</label>
-      <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" name="pswd" placeholder="Enter password" name="pswd" required>
     </div>
     <div class="form-group form-check">
       <label class="form-check-label">
@@ -31,6 +31,12 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <!-- <form method="post">
+    {% csrf_token %}
+    <input type="text" name="modulename" placeholder="enter module name" required>
+    <input type="number" name="moduleorder" placeholder="enter module order" required>
+    <button type="submit">Submit</button>
+</form> -->
 </div>
 
 </body>
